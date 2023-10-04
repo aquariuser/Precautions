@@ -1,3 +1,4 @@
+由于安装PetaLinux时需要设置/bin/sh指向为bash，否则会报出错误：WARNING: /bin/sh is not bash!。转换的方法入下：
 方法一：
 
     查看当前是bash还是dash：ls -al /bin/sh，输出如下结果：

@@ -1,0 +1,18 @@
+方法一：
+
+    查看当前是bash还是dash：ls -al /bin/sh，输出如下结果：
+    lrwxrwxrwx 1 root root 4 Dec 5 16:50 /bin/sh -> dash
+    删除原链接：sudo rm /bin/sh
+    新建链接指向bash：ln -s /bin/bash /bin/sh
+    查看当前链接：ls -al /bin/sh，看到如下输出表示转换成功：
+    lrwxrwxrwx 1 root root 9 Dec 9 09:56 /bin/sh -> /bin/bash
+
+如果需要转换回dash同理，转换命令如下:
+
+sudo rm /bin/sh
+ln -s /bin/dash /bin/sh
+ls -al /bin/sh
+
+方法二:
+
+方法二最简单，只需要一行命令即可。在shell中输入sudo dpkg-reconfigure dash，选择NO，退出后即可自动切换为bash了

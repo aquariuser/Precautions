@@ -1,3 +1,4 @@
+拉取速度慢的解决办法：
 推荐网易docker镜像源，更换方法如下：
   
 sudo mkdir -p /etc/docker
@@ -21,3 +22,11 @@ sudo systemctl restart docker
   https://hub-mirror.c.163.com/
   https://mirror.baidubce.com/
  Live Restore Enabled: false
+
+
+
+
+用docker pull镜像出现:failed to register layer: open /var/lib/docker/image/devicemapper/layerdb/tmp/write-set-450659526/diff: no space left on device
+表示docker空间不
+执行docker system prune -a这条代码后，docker中未启动的imges都会被清除
+然后再pull，就成功了

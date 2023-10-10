@@ -1,0 +1,23 @@
+推荐网易docker镜像源，更换方法如下：
+  
+sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json <<-'EOF'
+{
+  "registry-mirrors": [
+						"https://a3e6u0iu.mirror.aliyuncs.com",
+						"https://hub-mirror.c.163.com",
+						"https://mirror.baidubce.com"
+		      		  ]
+}
+EOF
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+
+输入命令查看是否替换成功
+  sudo docker info
+成功显示如下
+ Registry Mirrors:
+  https://a3e6u0iu.mirror.aliyuncs.com/
+  https://hub-mirror.c.163.com/
+  https://mirror.baidubce.com/
+ Live Restore Enabled: false
